@@ -23,6 +23,7 @@ router.addRoute('/:index', function ({ params }) {
 route(function onRoute (path) {
     var match = router.match(path)
     var { view } = match.action(match)
-    render(html`<${Roving}><${view} /></${Roving}`, document.getElementById('content'))
+    render(html`<${Roving}><${view} /></${Roving}`,
+        document.getElementById('content'))
 })
 

@@ -24,18 +24,22 @@ test('`latest` method', function (t) {
 })
 
 test('`createStream` method', function (t) {
-    var s = wrapper.createStream()
-    t.plan(8)  // 2*3 + 2
+    var stream = wrapper.createStream()
+
+    var i = 0
+    stream.push(i)
 
     S(
-        s,
+        stream,
         S.take(3),
         S.drain(function onData (data) {
             t.ok(data.images, 'should have images')
             t.ok(data.metadata, 'should have metadata')
+            stream.push(i++)
         }, function onEnd (err) {
             t.error(err)
             t.pass('stream should end')
+            t.end()
         })
     )
 })

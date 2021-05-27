@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "npm run build && concurrently --kill-others \"npm run serve\" \"npm run watch-sass\"",
-    "serve": "budo src/index.js:bundle.js --dir=public/ --live --open -- -p esmify -dv",
+    "serve": "budo src/index.js:bundle.js --dir=public/ --live --pushstate --open -- -p esmify -dv",
     "build": "npm run build-js && npm run build-sass",
     "build-sass": "sass src/style/main.scss public/style.css",
     "watch-sass": "sass --watch src/style/main.scss public/style.css",
@@ -20,6 +20,7 @@
     "htm": "^3.0.4",
     "isomorphic-fetch": "^3.0.0",
     "preact": "^10.5.13",
+    "pull-pushable": "^2.2.0",
     "route-event": "^3.1.0",
     "ruta3": "^2.0.1"
   },

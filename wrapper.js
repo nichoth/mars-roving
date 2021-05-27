@@ -2,6 +2,7 @@ var API_URL = 'https://hiring.hypercore-protocol.org/termrover'
 var fetch = require('isomorphic-fetch')
 var Readable = require('stream').Readable;
 var S = require('pull-stream')
+var Pushable = require('pull-pushable')
 
 var wrapper = {
     metadata: function () {
@@ -23,11 +24,15 @@ var wrapper = {
     },
 
     // smaller indexes on the `/termrover/:index` endpoint are
-    // considered earlier
+    //   considered earlier
     // if max is `undefined`, then it will count infinitely
-    createStream: function (max) {
-        return S(
-            S.count(max),
+    createStream: function () {
+        var p = Pushable()
+
+        p.push(0)
+
+        var stream = S(
+            p,
             S.asyncMap(function (i, cb) {
                 fetch(API_URL + '/' + i)
                     .then(res => res.json())
@@ -37,6 +42,10 @@ var wrapper = {
                     .catch(err => cb(err))
             })
         )
+
+        stream.push = p.push
+
+        return stream
     },
 
     // TODO

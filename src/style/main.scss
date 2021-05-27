@@ -2,3 +2,16 @@ body {
     background-color: pink;
 }
 
+.roving {
+    margin: 2rem;
+}
+
+.specific-image {
+    max-width: 40rem;
+    margin: 0 auto;
+
+    img {
+        width: 100%;
+    }
+}
+
