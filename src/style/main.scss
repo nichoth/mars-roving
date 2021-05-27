@@ -11,15 +11,16 @@ body {
     }
 }
 
-img {
-
-}
-
 .roving {
     margin: 2rem;
 
     .slideshow {
         @extend %nice-picture;
+
+        .img-index {
+            text-align: center;
+            margin: 1rem;
+        }
     }
 }
 

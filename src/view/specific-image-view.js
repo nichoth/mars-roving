@@ -50,7 +50,14 @@ module.exports = function createSpecificImageView (index) {
                 <li>sol -- ${imgData.metadata.sol}</li>
                 <li>earth date -- ${imgData.metadata.earth_date}</li>
             </ul>
+
             <img src="${imgData.img}" />
+
+            <div class="controls forward-back">
+                <a href="/${parseInt(index) - 1}">${'<<<'}</a>
+                <span>${index}</span>
+                <a href="/${parseInt(index) + 1}">${'>>>'}</a>
+            </div>
         </div>`
     }
 }

@@ -11,7 +11,8 @@ function indexView (props) {
         img: null,
         err: null,
         metadata: null,
-        hasFetched: false
+        hasFetched: false,
+        index: 0
     })
     console.log('speed', speed)
 
@@ -27,7 +28,8 @@ function indexView (props) {
                     img: res.images.base64,
                     metadata: res.metadata,
                     err: null,
-                    hasFetched: true
+                    hasFetched: true,
+                    index: i
                 })
                 console.log('resssss', res)
             })
@@ -67,6 +69,10 @@ function indexView (props) {
             <a href="/?${minus}">speed --</a>
             <span>${speed}</span>
             <a href="/?${plus}">speed ++</a>
+        </div>
+
+        <div class="img-index">
+            <a href="/${imgData.index}">index ${imgData.index}</a>
         </div>
 
     </div>`

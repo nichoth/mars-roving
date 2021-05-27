@@ -20,11 +20,6 @@ router.addRoute('/*', function ({ splats }) {
     return { view: IndexView }
 })
 
-// router.addRoute('/:index', function ({ params }) {
-//     var { index } = params
-//     return { view: SpecificImageView(index) }
-// })
-
 route(function onRoute (path) {
     console.log('path', path)
     var match = router.match(path)
@@ -39,7 +34,6 @@ route(function onRoute (path) {
         var index = splats[0]
         view = SpecificImageView(index)
     }
-
 
     var el = html`<${Roving}>
         <${view} splats=${match.splats} params=${match.params}
