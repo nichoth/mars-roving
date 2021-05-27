@@ -12,6 +12,13 @@ https://hiring.hypercore-protocol.org/
 > * Base64-encoded strings (for embedded in img tags)
 > * ASCII art (for displaying in the terminal)
 
+--------------------------------
+
+## test
+```
+npm test
+```
+
 ------------------------------------------
 
 ## notes

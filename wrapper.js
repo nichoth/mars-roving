@@ -4,6 +4,11 @@ var Readable = require('stream').Readable;
 var S = require('pull-stream')
 
 var wrapper = {
+    metadata: function () {
+        return fetch(API_URL)
+            .then(res => res.json())
+    },
+
     // get the laterst image
     latest: function () {
         return fetch(API_URL + '/latest')

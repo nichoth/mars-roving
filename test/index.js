@@ -30,6 +30,16 @@ test('`createStream` method', function (t) {
     )
 })
 
+test('metadata', function (t) {
+    t.plan(2)
+    wrapper.metadata()
+        .then(res => {
+            t.ok(res.key, 'has key')
+            t.ok(res.numImages, 'has numImages')
+        })
+        .catch(err => t.error(err))
+})
+
 // TODO
 // test('create node stream', function (t) {
 //     t.plan(1)
