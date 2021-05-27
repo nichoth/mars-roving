@@ -24,13 +24,16 @@ h1 {
     font-family: sans-serif;
     text-align: center;
     margin-bottom: 2rem;
-    padding-bottom: 4vmin;
+    // padding-bottom: 4vmin;
+    // padding-bottom: 40px;
+    padding-bottom: 37px;
     // padding-bottom: 0rem;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
     font-weight: normal;
     // font-size: 3rem;
-    font-size: 9vmin;
+    // font-size: 9vmin;
+    font-size: 32px;
 
     // ------------- fancy border ---------------
     border-bottom: 2px solid red;
@@ -51,7 +54,7 @@ h1 {
         display: block;
         position: relative;
         z-index: 1;
-        top: 2rem;
+        top: 26px;
         border-bottom: 2px solid orange;
     }
     // ------------- /fancy border ---------------
