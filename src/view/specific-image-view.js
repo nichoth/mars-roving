@@ -43,7 +43,7 @@ module.exports = function createSpecificImageView (index) {
         console.log('img data', imgData)
 
         return html`<div class="specific-image">
-            <h1>mars roving</h1>
+            <h1><a href="/">mars roving</a></h1>
 
             <ul class="metadata">
                 <li>sol -- ${imgData.metadata.sol}</li>

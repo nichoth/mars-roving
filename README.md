@@ -1,5 +1,10 @@
 # mars roving
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d02eb622-335a-430a-aa60-a3b739ce53cd/deploy-status)](https://app.netlify.com/sites/mars-roving/deploys)
+see it on netlify -- https://mars-roving.netlify.app/
+
+-----------------------------------
+
 https://hiring.hypercore-protocol.org/
 
 > For this task, we ask that you write two components, the second building on the first.
