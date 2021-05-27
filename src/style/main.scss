@@ -2,11 +2,7 @@ body {
     background-color: pink;
 }
 
-.roving {
-    margin: 2rem;
-}
-
-.specific-image {
+%nice-picture {
     max-width: 40rem;
     margin: 0 auto;
 
@@ -15,3 +11,46 @@ body {
     }
 }
 
+img {
+
+}
+
+.roving {
+    margin: 2rem;
+
+    .slideshow {
+        @extend %nice-picture;
+    }
+}
+
+.specific-image {
+    @extend %nice-picture;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-around;
+}
+
+// ----------- hovering --------------------------------------
+
+.slideshow, .specific-image {
+    ul.metadata {
+        visibility: hidden;
+        position: relative;
+        top: 40px;
+        left: 10px;
+        margin: 0;
+        margin-bottom: -40px;
+    }
+    &:hover {
+        ul.metadata {
+            visibility: visible;
+            list-style: none;
+            filter: drop-shadow(2px 3px 4px black);
+            color: white;
+        }
+    }
+}
+
+// ----------------- /hovering ------------------------------

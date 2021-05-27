@@ -2,8 +2,9 @@ var route = require('route-event')()
 import { render } from 'preact';
 import { html } from 'htm/preact';
 var router = require('ruta3')();
-var indexView = require('./view/index');
+var IndexView = require('./view/index');
 var SpecificImageView = require('./view/specific-image-view');
+var qs = require('query-string')
 
 function Roving (props) {
     return html`<div class="roving">
@@ -12,18 +13,40 @@ function Roving (props) {
 }
 
 router.addRoute('/', function indexRoute (match) {
-    return { view: indexView }
+    return { view: IndexView }
 })
 
-router.addRoute('/:index', function ({ params }) {
-    var { index } = params
-    return { view: SpecificImageView(index) }
+router.addRoute('/*', function ({ splats }) {
+    return { view: IndexView }
 })
+
+// router.addRoute('/:index', function ({ params }) {
+//     var { index } = params
+//     return { view: SpecificImageView(index) }
+// })
 
 route(function onRoute (path) {
+    console.log('path', path)
     var match = router.match(path)
+    console.log('match', match)
     var { view } = match.action(match)
-    render(html`<${Roving}><${view} /></${Roving}`,
-        document.getElementById('content'))
+    var { splats } = match
+
+    var obj = qs.parse(splats[0])
+
+    if (!obj.speed && splats[0]) {
+        // not the slideshow route
+        var index = splats[0]
+        view = SpecificImageView(index)
+    }
+
+
+    var el = html`<${Roving}>
+        <${view} splats=${match.splats} params=${match.params}
+            speed=${obj.speed}
+        />
+    </${Roving}`
+   
+    render(el, document.getElementById('content'))
 })
 

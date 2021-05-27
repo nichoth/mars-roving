@@ -7,14 +7,17 @@ module.exports = function createSpecificImageView (index) {
         var [imgData, setImg] = useState({
             img: null,
             err: null,
+            metadata: null,
             hasFetched: false
         })
 
         if (!imgData.hasFetched) {
             wrapper.byIndex(index)
                 .then(res => {
+                    console.log('ressss', res)
                     setImg({
                         img: res.images.base64,
+                        metadata: res.metadata,
                         err: null,
                         hasFetched: true
                     })
@@ -22,6 +25,7 @@ module.exports = function createSpecificImageView (index) {
                 .catch(err => {
                     setImg({
                         img: null,
+                        metadata: null,
                         err: err,
                         hasFetched: true
                     })
@@ -36,7 +40,16 @@ module.exports = function createSpecificImageView (index) {
             </div>`
         }
 
+        console.log('img data', imgData)
+
         return html`<div class="specific-image">
+
+            <h1>mars roving</h1>
+
+            <ul class="metadata">
+                <li>sol -- ${imgData.metadata.sol}</li>
+                <li>earth date -- ${imgData.metadata.earth_date}</li>
+            </ul>
             <img src="${imgData.img}" />
         </div>`
     }
