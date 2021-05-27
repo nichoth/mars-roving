@@ -23,7 +23,11 @@ npm test
 
 ## notes
 
-* the `wrapper` uses an isomarphic fetch module, so it works in either node or browsers
+The `wrapper` uses an isomarphic fetch module, so it works in either node or browsers
+
+We are using [pull-streams](https://pull-stream.github.io/) here, which is not a standard in node or browsers, because it is the simplest way to achieve the goals of the slideshow -- "it shouldn't synchronously load all images"
+
+
 
 -----------------------------------------
 

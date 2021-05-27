@@ -37,6 +37,7 @@ function indexView (props) {
 
         // how long to wait before requesting a new one
         // it is not related to when the last one was downloaded
+        console.log('speed', speed)
         var id = setInterval(() => {
             s.push(i++)
             console.log('i', i)
