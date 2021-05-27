@@ -53,15 +53,3 @@ test('metadata', function (t) {
         })
         .catch(err => t.error(err))
 })
-
-// TODO
-// test('create node stream', function (t) {
-//     t.plan(1)
-//     var s = wrapper.createNodeStream()
-//     s.once('data', data => {
-//         console.log('data', data)
-//         t.pass('aaaaaa')
-//     })
-
-// })
-

@@ -6,7 +6,6 @@ var S = require('pull-stream')
 function indexView (props) {
     var { speed } = props
     speed = speed || 3000
-    // const [img, setImg] = useState(null);
     var [imgData, setImg] = useState({
         img: null,
         err: null,
@@ -33,6 +32,12 @@ function indexView (props) {
                     hasFetched: true,
                     index: res.index
                 })
+
+                // set the timeout in here instead of using `setInterval`
+                // because this way it accounts for the time it takes to
+                // transfer to and from the API. It adds `speed` milliseconds
+                // from the time the last response was reveived, vs. pushing
+                // at a standard interval regardless of API response time
                 id = setTimeout(() => s.push(++i), speed)
                 console.log('resssss', res, i)
             })
@@ -44,14 +49,13 @@ function indexView (props) {
     }, [])
 
     var plus = new URLSearchParams({ speed: parseInt(speed) + 100 }).toString()
-    var minus = new URLSearchParams({ speed: speed - 100 }).toString()
+    var minus = new URLSearchParams({ speed: parseInt(speed) - 100 }).toString()
 
     if (!imgData.img) {
         return null
     }
 
     return html`<div class="slideshow">
-
         <h1>mars roving</h1>
 
         <ul class="metadata">
