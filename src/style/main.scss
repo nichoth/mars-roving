@@ -1,5 +1,5 @@
 body {
-    background-color: pink;
+    background-color: lightgray;
 }
 
 %nice-picture {
@@ -19,6 +19,18 @@ a {
 }
 
 h1 {
+    font-weight: normal;
+    font-family: sans-serif;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+    // padding-bottom: 0rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    font-weight: normal;
+    font-size: 3rem;
+
+    // ------------- fancy border ---------------
     border-bottom: 2px solid red;
 
     &:before {
@@ -26,10 +38,20 @@ h1 {
         display: block;
         position: relative;
         z-index: 1;
-        top: 2.7rem;
-        bottom: 2px;
+        // top: 2.7rem;
+        top: 3.8rem;
         border-bottom: 2px solid #36F;
     }
+
+    &:after {
+        content: "";
+        display: block;
+        position: relative;
+        z-index: 1;
+        top: 1rem;
+        border-bottom: 2px solid orange;
+    }
+    // ------------- /fancy border ---------------
 }
 
 .roving {
