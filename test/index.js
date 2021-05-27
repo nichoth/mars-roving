@@ -15,14 +15,17 @@ test('`latest` method', function (t) {
 
 test('`createStream` method', function (t) {
     var s = wrapper.createStream()
-    t.plan(2)
+    t.plan(8)  // 2*3 + 2
 
     S(
         s,
-        S.take(1),
+        S.take(3),
         S.drain(function onData (data) {
             t.ok(data.images, 'should have images')
             t.ok(data.metadata, 'should have metadata')
+        }, function onEnd (err) {
+            t.error(err)
+            t.pass('stream should end')
         })
     )
 })
