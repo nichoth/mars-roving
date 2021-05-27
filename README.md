@@ -14,6 +14,12 @@ https://hiring.hypercore-protocol.org/
 
 ------------------------------------------
 
+## notes
+
+* the `wrapper` uses an isomarphic fetch module, so it works in either node or browsers
+
+-----------------------------------------
+
 ## Wrapper Module
 
 The first module should be a small wrapper around the Rover API that exposes a few methods for dealing with Rover images. There should be methods for:
