@@ -9,6 +9,11 @@ var wrapper = {
             .then(res => res.json())
     },
 
+    byIndex: function (index) {
+        return fetch(API_URL + '/' + index)
+            .then(res => res.json())
+    },
+
     // get the laterst image
     latest: function () {
         return fetch(API_URL + '/latest')
@@ -19,6 +24,7 @@ var wrapper = {
 
     // smaller indexes on the `/termrover/:index` endpoint are
     // considered earlier
+    // if max is `undefined`, then it will count infinitely
     createStream: function (max) {
         return S(
             S.count(max),
@@ -33,29 +39,30 @@ var wrapper = {
         )
     },
 
-    createNodeStream: function () {
-        var rs = Readable();
-        var i = 0;
+    // TODO
+    // createNodeStream: function () {
+    //     var rs = Readable();
+    //     var i = 0;
 
-        // note the function _read here for async iteration
-        rs._read = function () {
+    //     // note the function _read here for async iteration
+    //     rs._read = function () {
 
-            fetch(API_URL + '/' + i++)
-                .then(res => {
-                    // var reader = res.body.getReader()
-                    // reader.read.then(r => rs.push(r))
+    //         fetch(API_URL + '/' + i++)
+    //             .then(res => {
+    //                 // var reader = res.body.getReader()
+    //                 // reader.read.then(r => rs.push(r))
 
-                    res.text().then(res => rs.push(res))
-                    // rs.push(res);
-                })
-                .catch(err => console.log('errrr', err))
+    //                 res.text().then(res => rs.push(res))
+    //                 // rs.push(res);
+    //             })
+    //             .catch(err => console.log('errrr', err))
 
-            // rs.push(String.fromCharCode(c++));
-            // if (c > 'z'.charCodeAt(0)) rs.push(null);
-        };
+    //         // rs.push(String.fromCharCode(c++));
+    //         // if (c > 'z'.charCodeAt(0)) rs.push(null);
+    //     };
 
-        return rs
-    }
+    //     return rs
+    // }
 }
 
 module.exports = wrapper

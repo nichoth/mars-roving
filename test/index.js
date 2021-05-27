@@ -2,6 +2,16 @@ var test = require('tape')
 var wrapper = require('../wrapper')
 var S = require('pull-stream')
 
+test('by index', function (t) {
+    t.plan(2)
+    wrapper.byIndex(0)
+        .then(res => {
+            t.ok(res.metadata, 'should have metadata')
+            t.ok(res.images, 'should have images')
+        })
+        .catch(err => t.error(err))
+})
+
 test('`latest` method', function (t) {
     t.plan(3)
     wrapper.latest()
