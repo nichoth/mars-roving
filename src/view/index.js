@@ -21,6 +21,8 @@ function indexView (props) {
         var s = wrapper.createStream()
         var i = 0
 
+        var id
+
         S(
             s,
             S.drain(function onEvent (res) {
@@ -29,22 +31,15 @@ function indexView (props) {
                     metadata: res.metadata,
                     err: null,
                     hasFetched: true,
-                    index: i
+                    index: res.index
                 })
-                console.log('resssss', res)
+                id = setTimeout(() => s.push(++i), speed)
+                console.log('resssss', res, i)
             })
         )
 
-        // how long to wait before requesting a new one
-        // it is not related to when the last one was downloaded
-        console.log('speed', speed)
-        var id = setInterval(() => {
-            s.push(i++)
-            console.log('i', i)
-        }, speed)
-
         return () => {
-            clearInterval(id)
+            if (id) clearTimeout(id)
         }
     }, [])
 
