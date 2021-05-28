@@ -41,6 +41,13 @@ We are using [pull-streams](https://pull-stream.github.io/) here, which is not a
 
 This is an example of my preferred testing system -- cypress for browser environment, `tape` for node.js
 
+--------------------
+
+This uses
+
+* [preact](https://preactjs.com/) and [htm](https://www.npmjs.com/package/htm) as a view layer
+* client-side routing via [route-event](https://github.com/nichoth/route-event)
+* singe-page style hosting via netlify
 
 
 
