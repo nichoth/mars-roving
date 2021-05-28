@@ -57,6 +57,41 @@ npm test
 
 ------------------------------------
 
+## wrapper.js
+
+```js
+var mars = require('{this-package}/wrapper')
+
+mars.byIndex(0)
+    .then(res => {
+        console.log('index 0', res)
+    })
+```
+
+```js
+var mars = require('{this-package}/wrapper')
+var s = mars.createStream()
+// the state of which index you are using is *external* to the `wrapper`
+// module
+var i = 0
+
+S(
+    s,
+    S.drain(function onEvent (res) {
+        console.log('resssss', res, i)
+
+        // set the timeout in here instead of using `setInterval`
+        // because this way it accounts for the time it takes to
+        // transfer to and from the API. It adds `speed` milliseconds
+        // from the time the last response was reveived, vs. pushing
+        // at a standard interval regardless of API response time
+        setTimeout(() => s.push(++i), speed)
+    })
+)
+```
+
+-------------------------------
+
 ## notes
 
 The `wrapper` uses an isomarphic fetch module, so it works in either node or browsers
