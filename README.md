@@ -6,6 +6,41 @@ see it on netlify -- https://mars-roving.netlify.app/
 
 --------------------------------
 
+## install
+Git clone and then install dependencies
+
+```
+$ mkdir mars-roving
+$ cd mars-roving
+$ git clone https://github.com/nichoth/mars-roving.git .
+$ npm i
+```
+
+## develop
+This will open a webpage being served by [budo](https://www.npmjs.com/package/budo) on localhost. It live-reloads any changes to js or css.
+
+```
+npm start
+```
+
+## build
+```
+npm run build
+```
+
+-------------------------
+
+This uses:
+
+* browserify
+* [preact](https://preactjs.com/) and [htm](https://www.npmjs.com/package/htm) as a view layer
+* client-side routing via [route-event](https://github.com/nichoth/route-event)
+* single-page redirects via netlify
+* sass for css
+
+
+---------------------------------------------------------
+
 ## test
 
 ### Test the frontend app in [cypress](https://www.cypress.io/)
@@ -21,18 +56,6 @@ npm test
 
 ------------------------------------
 
-## develop
-```
-npm start
-```
-
-## build
-```
-npm run build
-```
-
-------------------------------------------
-
 ## notes
 
 The `wrapper` uses an isomarphic fetch module, so it works in either node or browsers
@@ -41,19 +64,10 @@ We are using [pull-streams](https://pull-stream.github.io/) here, which is not a
 
 This is an example of my preferred testing system -- cypress for browser environment, `tape` for node.js
 
+
+
 --------------------
 
-This uses:
-
-* browserify
-* [preact](https://preactjs.com/) and [htm](https://www.npmjs.com/package/htm) as a view layer
-* client-side routing via [route-event](https://github.com/nichoth/route-event)
-* single-page redirects via netlify
-* sass for css
-
-
-
----------------------------------------------------------
 
 
 ## https://hiring.hypercore-protocol.org/
