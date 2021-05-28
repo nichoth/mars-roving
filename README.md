@@ -24,6 +24,7 @@ npm start
 ```
 
 ## build
+This builds the js and css and puts them in the `public/` directory.
 ```
 npm run build
 ```
