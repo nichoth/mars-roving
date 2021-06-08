@@ -27,6 +27,9 @@ route(function onRoute (path) {
     var { view } = match.action(match)
     var { splats } = match
 
+    // every time the route changes, we re-render the view with the
+    // new route params
+
     var obj = qs.parse(splats[0])
 
     if (!obj.speed && splats[0]) {

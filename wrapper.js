@@ -1,6 +1,6 @@
 var API_URL = 'https://hiring.hypercore-protocol.org/termrover'
 var fetch = require('isomorphic-fetch')
-var Readable = require('stream').Readable;
+// var Readable = require('stream').Readable;
 var S = require('pull-stream')
 var Pushable = require('pull-pushable')
 

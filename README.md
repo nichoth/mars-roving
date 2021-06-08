@@ -92,6 +92,12 @@ S(
 
 -------------------------------
 
+## TODO
+
+* handle errors when requesting the images
+
+----------------------------------
+
 ## notes
 
 The `wrapper` uses an isomarphic fetch module, so it works in either node or browsers
