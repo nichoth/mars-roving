@@ -25,7 +25,6 @@ var wrapper = {
 
     // smaller indexes on the `/termrover/:index` endpoint are
     //   considered earlier
-    // if max is `undefined`, then it will count infinitely
     createStream: function () {
         var p = Pushable()
 
