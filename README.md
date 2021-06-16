@@ -27,6 +27,12 @@ npm start
 
 We have a `preversion` script for when you change the version number with `npm`. It will lint the code.
 
+You could also add a test script to this also if you want to
+
+```
+    "preversion": "npm run lint && npm test"
+```
+
 ## build
 This builds the js and css and puts them in the `public/` directory.
 ```
