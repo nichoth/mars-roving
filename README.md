@@ -23,6 +23,10 @@ This will open a webpage being served by [budo](https://www.npmjs.com/package/bu
 npm start
 ```
 
+### `npm version`
+
+We have a `preversion` script for when you change the version number with `npm`. It will lint the code.
+
 ## build
 This builds the js and css and puts them in the `public/` directory.
 ```
