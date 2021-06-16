@@ -1,9 +1,9 @@
 var route = require('route-event')()
-import { render } from 'preact';
-import { html } from 'htm/preact';
-var router = require('ruta3')();
-var IndexView = require('./view/index');
-var SpecificImageView = require('./view/specific-image-view');
+import { render } from 'preact'
+import { html } from 'htm/preact'
+var router = require('ruta3')()
+var IndexView = require('./view/index')
+var SpecificImageView = require('./view/specific-image-view')
 var qs = require('query-string')
 
 function Roving (props) {
@@ -43,7 +43,7 @@ route(function onRoute (path) {
             speed=${obj.speed}
         />
     </${Roving}`
-   
+
     render(el, document.getElementById('content'))
 })
 

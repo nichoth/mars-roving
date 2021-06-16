@@ -1,5 +1,5 @@
-import { html } from 'htm/preact';
-import { useState, useEffect } from 'preact/hooks';
+import { html } from 'htm/preact'
+import { useState, useEffect } from 'preact/hooks'
 var wrapper = require('../../wrapper')
 var S = require('pull-stream')
 

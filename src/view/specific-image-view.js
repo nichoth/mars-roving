@@ -1,5 +1,5 @@
-import { html } from 'htm/preact';
-import { useState } from 'preact/hooks';
+import { html } from 'htm/preact'
+import { useState } from 'preact/hooks'
 var wrapper = require('../../wrapper')
 
 module.exports = function createSpecificImageView (index) {
@@ -36,7 +36,7 @@ module.exports = function createSpecificImageView (index) {
 
         if (imgData.err) {
             return html`<div class="specific-image error">
-                ${img.err.toString()}
+                ${imgData.err.toString()}
             </div>`
         }
 
