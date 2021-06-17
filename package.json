@@ -17,6 +17,7 @@
     "test-browser": "npm run build && concurrently --kill-others \"budo src/index.js:bundle.js --dir=public/ --port=9966 --live --pushstate -- -p esmify -dv\" \"cypress open\"",
     "test": "tape test/*.js | tap-spec",
     "lint": "eslint .",
+    "deps": "depcheck --ignores=\"cypress,esmify,uglifyify,depcheck,eslint,eslint-config-minlint,public/*\"",
     "preversion": "npm run lint"
   },
   "dependencies": {
@@ -33,6 +34,7 @@
     "budo": "^11.6.4",
     "concurrently": "^6.2.0",
     "cypress": "^7.4.0",
+    "depcheck": "^1.4.1",
     "eslint-config-minlint": "^2.0.0",
     "esmify": "^2.1.1",
     "pull-stream": "^3.6.14",
