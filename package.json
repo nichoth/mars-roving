@@ -17,8 +17,8 @@
     "test-browser": "npm run build && concurrently --kill-others \"budo src/index.js:bundle.js --dir=public/ --port=9966 --live --pushstate -- -p esmify -dv\" \"cypress open\"",
     "test": "tape test/*.js | tap-spec",
     "lint": "eslint .",
-    "deps": "depcheck --ignores=\"cypress,esmify,uglifyify,depcheck,eslint,eslint-config-minlint,public/*\"",
-    "preversion": "npm run lint"
+    "deps": "depcheck --skip-missing=true --ignores=\"cypress,esmify,uglifyify,depcheck,eslint,eslint-config-minlint,public/*\"",
+    "preversion": "npm run lint && npm run deps"
   },
   "dependencies": {
     "htm": "^3.0.4",
