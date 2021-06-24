@@ -136,12 +136,12 @@ This is an example of my preferred testing system -- cypress for browser environ
 
 ## Wrapper Module
 
-The first module should be a small wrapper around the Rover API that exposes a few methods for dealing with Rover images. There should be methods for:
-
-* Getting all information about the latest Rover image (the `/termrover/latest` endpoint).
-* Generating an iterator over all Rover images/metadata, ordered from earliest to latest (smaller indexes on the `/termrover/:index` endpoint are considered earlier). **This can be a Node.js stream, an async iterator, or a similar abstraction**, but it **shouldn't synchronously load all images**.
-
-In both cases, the JSON response should be forwarded with minimal modifications — no need to extract out pieces of the response.
-
-Once this module is tested and documented, you should do either the CLI Task, or the Frontend Task, as described below.
+> The first module should be a small wrapper around the Rover API that exposes a few methods for dealing with Rover images. There should be methods for:
+> 
+> * Getting all information about the latest Rover image (the `/termrover/latest` endpoint).
+> * Generating an iterator over all Rover images/metadata, ordered from earliest to latest (smaller indexes on the `/termrover/:index` endpoint are considered earlier). **This can be a Node.js stream, an async iterator, or a similar abstraction**, but it **shouldn't synchronously load all images**.
+> 
+> In both cases, the JSON response should be forwarded with minimal modifications — no need to extract out pieces of the response.
+> 
+> Once this module is tested and documented, you should do either the CLI Task, or the Frontend Task, as described below.
 
