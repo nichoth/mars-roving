@@ -24,7 +24,7 @@ $ npm i
 This will open a webpage being served by [budo](https://www.npmjs.com/package/budo) on localhost. It live-reloads any changes to js or css.
 
 ```
-npm start
+$ npm start
 ```
 
 ### `npm version`
@@ -40,7 +40,7 @@ You could also add a test script to this also if you want to
 ## build
 This builds the js and css and puts them in the `public/` directory.
 ```
-npm run build
+$ npm run build
 ```
 
 -------------------------
@@ -48,6 +48,7 @@ npm run build
 This uses:
 
 * browserify
+* [budo](https://www.npmjs.com/package/budo) as a local development server
 * [preact](https://preactjs.com/) and [htm](https://www.npmjs.com/package/htm) as a view layer
 * client-side routing via [route-event](https://github.com/nichoth/route-event)
 * single-page redirects via netlify
