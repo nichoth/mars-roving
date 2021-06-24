@@ -6,6 +6,10 @@ see it on netlify -- https://mars-roving.netlify.app/
 
 --------------------------------
 
+Documenting how to make a website
+
+------------------------------
+
 ## install
 Git clone and then install dependencies
 
