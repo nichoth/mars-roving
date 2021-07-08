@@ -18,7 +18,8 @@
     "test": "tape test/*.js | tap-spec",
     "lint": "eslint .",
     "deps": "depcheck --skip-missing=true --ignores=\"cypress,esmify,uglifyify,depcheck,eslint,eslint-config-minlint,public/*\"",
-    "preversion": "npm run lint && npm run deps"
+    "preversion": "npm run lint && npm run deps",
+    "postversion": "git push && git push --tags && npm publish"
   },
   "dependencies": {
     "htm": "^3.0.4",
