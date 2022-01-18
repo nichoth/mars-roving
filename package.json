@@ -20,7 +20,8 @@
     "lint": "eslint .",
     "deps": "depcheck --skip-missing=true --ignores=\"cypress,esmify,uglifyify,depcheck,eslint,eslint-config-minlint,public/*\"",
     "preversion": "npm test && npm run lint && npm run deps",
-    "postversion": "git push && git push --tags && npm publish"
+    "postversion": "git push && git push --tags && npm publish",
+    "prepare": "husky install"
   },
   "dependencies": {
     "htm": "^3.0.4",
@@ -41,6 +42,7 @@
     "envify": "^4.1.0",
     "eslint-config-minlint": "^2.0.0",
     "esmify": "^2.1.1",
+    "husky": "^7.0.4",
     "pull-stream": "^3.6.14",
     "sass": "^1.34.0",
     "tap-spec": "^5.0.0",
